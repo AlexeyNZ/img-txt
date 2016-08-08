@@ -5,24 +5,32 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>Bootstrap 101 Template</title>
-
+    <title>Image to Text converter</title>
     <!-- Bootstrap -->
-    <link href="node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <link href="./node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
+    <!-- Custom CSS -->
+    <link href="./css/style.css">
   </head>
   <body>
-    <h1>Hello, world!</h1>
-
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="js/bootstrap.min.js"></script>
+    <div class="container">
+            <h1 class="text-uppercase">img2txt converter</h1>
+            <p id="instruction"> Download a image which you want to recognize</p>
+            <label class="btn btn-default btn-block">
+              Browse ... 
+              <input type="file" id="my-file-selector" style="display: none;">
+            </label>
+            <br>
+            <textarea id="recognizedText" class="form-control" rows="3"></textarea>
+    </div>
+    <!-- jQuery-->
+    <script src="./node_modules/jquery/dist/jquery.min.js"></script>
+    <!-- Bootstrap-->
+    <script src="./node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <!--Custom Script-->
+    <script src="./js/main.js"></script>
   </body>
 </html>
