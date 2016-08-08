@@ -22,7 +22,7 @@ function processImage(callback) : void {
     }
 }
 
-function sendImgRequest(file, callback) : void {
+function sendImgRequest(file: any, callback: any) : void {
     $.ajax({
             url: "https://api.projectoxford.ai/vision/v1.0/ocr?language=en&detectOrientation =true",
             beforeSend: function(xhrObj){
@@ -43,9 +43,6 @@ function sendImgRequest(file, callback) : void {
     });
    
  
-
-
-
 imgSelector.addEventListener("change", function () {
     processImage(function (file) { //this checks the extension and file
 
