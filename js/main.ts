@@ -8,7 +8,7 @@ imgSelector.addEventListener("change", function () {
     });
     function sendImgRequest(file: any, callback: any) : void {
     $.ajax({
-            url: "https://api.projectoxford.ai/vision/v1.0/ocr?language=en&detectOrientation=true",
+            url: "https://api.projectoxford.ai/vision/v1.0/ocr?language=unk&detectOrientation%20=true%20HTTP/1.1",
             beforeSend: function(xhrObj){
                 // Request headers
                 xhrObj.setRequestHeader("Content-Type","application/json");
