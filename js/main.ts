@@ -17,7 +17,6 @@ imgSelector.addEventListener("change", function () {
             type: "POST",
             // Request body
             data: file
-            processData: false
         })
         .done(function(data) {
             alert("success");
