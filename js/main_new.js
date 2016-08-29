@@ -1,7 +1,6 @@
 var instruction = $("#instruction")[0];
 var imgSelector = $("#my-file-selector");
-
-
+var text = $("#recognizedText")[0];
 
 imgSelector.on("change", function () {
     instruction.innerHTML = "Just a sec while we analyse your text...";
@@ -25,6 +24,9 @@ imgSelector.on("change", function () {
         })
         .done(function(data) {
             alert("success");
+            var jsonVar = data;
+            var jsonStr = JSON.stringify(jsonVar);
+            text.innerHTML = jsonStr;
         })
         .fail(function() {
             alert("error");
