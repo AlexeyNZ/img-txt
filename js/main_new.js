@@ -1,17 +1,14 @@
 var instruction = $("#instruction")[0];
 var imgSelector = $("#my-file-selector")[0];
 
-var file = $("#my-file-selector").val();
-
 imgSelector.addEventListener("change", function () {
     instruction.innerHTML = "Just a sec while we analyse your text...";
-     $(function() {
+    var imgFile = new FormData(imgSelector);
      var params = {
             // Request parameters
             "language": "unk",
             "detectOrientation ": "true",
         };
-      
         $.ajax({
             url: "https://api.projectoxford.ai/vision/v1.0/ocr?" + $.param(params),
             beforeSend: function(xhrObj){
@@ -21,7 +18,7 @@ imgSelector.addEventListener("change", function () {
             },
             type: "POST",
             // Request body
-            data: file,
+            data: imgFile,
             processData: false
         })
         .done(function(data) {
@@ -30,7 +27,6 @@ imgSelector.addEventListener("change", function () {
         .fail(function() {
             alert("error");
         });
-    });
 });
 
 
