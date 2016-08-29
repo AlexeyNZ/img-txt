@@ -2,10 +2,10 @@
 var instruction = $("#instruction")[0];
 var imgSelector = $("#my-file-selector")[0];
 
-imgSelector.addEventListener("change", function () {
+/* imgSelector.addEventListener("change", function () {
     instruction.innerHTML = "Just a sec while we analyse your text...";
     processImage(function (file) {
-    sendImgRequest (file, function(file){
+    sendImgRequest (file, function(){
 
     });
     });
@@ -31,10 +31,12 @@ function processImage(callback) {
         }
     };
 }
+*/
 
-function sendImgRequest(file, callback) {
+imgSelector.addEventListener("change", function () {
+       sendImgRequest(file) {
         $.ajax({
-            url: "https://api.projectoxford.ai/vision/v1.0",
+            url: "https://api.projectoxford.ai/vision/v1.0/ocr",
             beforeSend: function (xhrObj) {
                 // Request headers
                 xhrObj.setRequestHeader("Content-Type", "application/json");
@@ -52,3 +54,4 @@ function sendImgRequest(file, callback) {
             alert("error");
         });
     }
+});
