@@ -29,8 +29,12 @@ imgSelector.on("change", function () {
             var jsonStr = JSON.stringify(jsonVar);
             text.innerHTML = jsonStr;
             var textHtml = jsonStr.language;
-            showText.innerHTML = data.regions[0].lines[0].words[0].text;
-
+            $.each(data, function () {
+                $.each(this, function (name, value) {
+                console.log(name + '=' + value);
+            });
+            });
+           // showText.innerHTML = data.regions[0].lines[0].words[0].text;
         })
         .fail(function() {
             alert("error");
