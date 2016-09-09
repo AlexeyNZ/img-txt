@@ -8,7 +8,7 @@
     color: white;
     background-color: black;
     position: relative;
-    height: 70vh
+    height: 80vh
 
 }
 
@@ -48,12 +48,16 @@ header a:hover {
     font-size: 30px;
 }
 
-.mainText button {
+button {
     background: transparent;
     text-decoration: none;
-    border: 1px solid cadetblue;
+    border: 1px solid grey;
     padding: 10px 10px;
     text-transform: uppercase;
+}
+
+.mainText button {
+    border: 1px solid cadetblue;
 }
 
 .mainText button:hover {
@@ -118,4 +122,49 @@ header a:hover {
   2% {
     transform: none;
 }
+}
+
+ul {
+    list-style: none;
+    padding-left: 20px;
+}
+
+ol {
+    margin-top: 20px; 
+    padding-left: 15px;
+}
+
+.imageExpl {
+    font-size: 12px;
+    position: relative;
+}
+
+.Expl h1 {
+    font-size: 24px;
+    letter-spacing: 3px;
+
+}
+
+.vertical-align {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  text-align: center;
+}
+
+footer {
+    color: white;
+    background: black;
+    text-align: center;
+    letter-spacing: 2px;
+    padding: 5px 0;
+}
+
+footer p {
+    padding-top: 5px;
+}
+
+footer p span {
+    font-size: 10px;
 }
