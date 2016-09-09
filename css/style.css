@@ -18,7 +18,7 @@ header {
 
 .headerP {
     font-size: 16px;
-    opacity: 0.5;
+    opacity: 1;
 }
 
 .headerP span {
@@ -100,4 +100,22 @@ header a:hover {
     25%  {opacity: 0.3}
     50%  {opacity: 0.4}
     100% {left: 80%; opacity: 0}
+}
+
+.noise {
+  animation: transform 3s 10;
+}
+
+
+
+@keyframes transform {
+  0% {
+    transform: translate(-5%, -5%) skew(-10deg) scale(1.05);
+  }
+  1% {
+    transform: none;
+  }
+  2% {
+    transform: none;
+}
 }
