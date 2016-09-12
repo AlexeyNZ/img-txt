@@ -3,7 +3,10 @@ var imgSelector = $("#my-file-selector");
 var text = $("#recognizedText")[0];
 var showText = $("#showText")[0];
 
+
+
 imgSelector.on("change", function () {
+    $(".recognize").addClass( "visible" );
     instruction.innerHTML = "Just a sec while we analyse your text...";
     var file = imgSelector.get(0).files[0]; 
      var params = {
@@ -24,20 +27,14 @@ imgSelector.on("change", function () {
             processData: false
         })
         .done(function(data) {
-            //alert("success");
-            //var jsonVar = data;
-            //var jsonStr = JSON.stringify(jsonVar);
-            //text.innerHTML = jsonStr;
-            //var textHtml = jsonStr.language;
             var res = "";
             $( data.regions[0].lines ).each(function(indl, line) {
-            //console.log(line);
             $( line.words ).each(function(indw, word) {
-            //console.log(word.text);
             res = res + word.text + ' ';
             });
             });
             showText.innerHTML = res;
+            instruction.innerHTML = "Your text is already done";
         })
         .fail(function() {
             instruction.innerHTML = "Please, try again or choose correct format of file";
