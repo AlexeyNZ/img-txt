@@ -1,7 +1,7 @@
 var instruction = $("#instruction")[0];
-var imgSelector = $("#my-file-selector")[0];
+var imgSelector = $("#my-file-selector");
+var text = $("#recognizedText")[0];
 var showText = $("#showText")[0];
-
 
 imgSelector.on("change", function () {
     instruction.innerHTML = "Just a sec while we analyse your text...";
@@ -24,9 +24,16 @@ imgSelector.on("change", function () {
             processData: false
         })
         .done(function(data) {
-            var res : string = "";
+            //alert("success");
+            //var jsonVar = data;
+            //var jsonStr = JSON.stringify(jsonVar);
+            //text.innerHTML = jsonStr;
+            //var textHtml = jsonStr.language;
+            var res = "";
             $( data.regions[0].lines ).each(function(indl, line) {
+            //console.log(line);
             $( line.words ).each(function(indw, word) {
+            //console.log(word.text);
             res = res + word.text + ' ';
             });
             });
@@ -37,4 +44,7 @@ imgSelector.on("change", function () {
         });
 });
 
-   
+
+
+
+// https://www.w3.org/WAI/images/easychecks/resize-wrap.png

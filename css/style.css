@@ -38,6 +38,10 @@ header a:hover {
     color: white;
 }
 
+.about {
+    text-align: right;
+}
+
 .mainText {
     color: cadetblue;
     margin: 50px 0;
@@ -162,11 +166,19 @@ ol {
   text-align: center;
 }
 
+.convert {
+    text-align: right;
+}
+
 #instruction {
     font-size: 18px;
     text-transform: uppercase;
     text-align: center;
 
+}
+
+.recognize {
+    margin: 40px 0;
 }
 
 footer {
@@ -183,4 +195,10 @@ footer p {
 
 footer p span {
     font-size: 10px;
+}
+
+#showText {
+    background: transparent;
+    border: 1px solid grey;
+    padding: 10px 10px;
 }
