@@ -24,20 +24,23 @@ imgSelector.on("change", function () {
             processData: false
         })
         .done(function(data) {
-            alert("success");
-            var jsonVar = data;
-            var jsonStr = JSON.stringify(jsonVar);
-            text.innerHTML = jsonStr;
-            var textHtml = jsonStr.language;
-            $.each(data, function () {
-                $.each(this, function (name, value) {
-                console.log(name + '=' + value);
+            //alert("success");
+            //var jsonVar = data;
+            //var jsonStr = JSON.stringify(jsonVar);
+            //text.innerHTML = jsonStr;
+            //var textHtml = jsonStr.language;
+            var res = "";
+            $( data.regions[0].lines ).each(function(indl, line) {
+            //console.log(line);
+            $( line.words ).each(function(indw, word) {
+            //console.log(word.text);
+            res = res + word.text + ' ';
             });
             });
-           // showText.innerHTML = data.regions[0].lines[0].words[0].text;
+            showText.innerHTML = res;
         })
         .fail(function() {
-            alert("error");
+            instruction.innerHTML = "Please, try again or choose correct format of file";
         });
 });
 

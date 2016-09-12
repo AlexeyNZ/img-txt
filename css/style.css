@@ -56,6 +56,15 @@ button {
     text-transform: uppercase;
 }
 
+label.btn {
+    background: transparent;
+    text-decoration: none;
+    border: 1px solid grey;
+    padding: 10px 10px;
+    text-transform: uppercase;
+    border-radius: 0px;
+}
+
 .mainText button {
     border: 1px solid cadetblue;
 }
@@ -151,6 +160,13 @@ ol {
   justify-content: center;
   flex-direction: row;
   text-align: center;
+}
+
+#instruction {
+    font-size: 18px;
+    text-transform: uppercase;
+    text-align: center;
+
 }
 
 footer {
