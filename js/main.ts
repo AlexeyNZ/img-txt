@@ -34,6 +34,7 @@ imgSelector.addEventListener("change", function () {
             });
             showText.innerHTML = res;
             instruction.innerHTML = "Your text is already done";
+            $("html, body").animate({ scrollTop: $(document).height() }, "slow");
         })
         .fail(function() {
             instruction.innerHTML = "Please, try again or choose correct format of file";
