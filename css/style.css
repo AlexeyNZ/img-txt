@@ -40,6 +40,7 @@ header a:hover {
 
 .about {
     text-align: right;
+    cursor: pointer;
 }
 
 .mainText {

@@ -39,3 +39,9 @@ imgSelector.addEventListener("change", function () {
             instruction.innerHTML = "Please, try again or choose correct format of file";
         });
 });
+
+
+$("#scroll").click(function() {
+  $("html, body").animate({ scrollTop: $(document).height() }, "slow");
+  return false;
+});
