@@ -4,11 +4,19 @@ var instruction = $("#instruction")[0];
 var imgSelector: HTMLInputElement = <HTMLInputElement> $("#my-file-selector")[0];
 var showText = $("#showText")[0];
 
-imgSelector.addEventListener("change", function () {
+function scrollConvert() : void {
+    $("html, body").animate({ scrollTop: $(document).height() }, "slow");
+}
+
+function prepare() : void {
     $(".recognize").addClass( "visible" );
     instruction.innerHTML = "Just a sec while we analyse your text...";
+}
+
+imgSelector.addEventListener("change", function () {
+    prepare();
     var file = imgSelector.files[0];
-     var params = {
+    var params = {
             // Request parameters
             "language": "unk",
             "detectOrientation": "true",
@@ -26,7 +34,7 @@ imgSelector.addEventListener("change", function () {
             processData: false
         })
         .done(function(data) {
-            var res = "";
+            var res: string = "";
             $( data.regions[0].lines ).each(function(indl, line) {
             $( line.words ).each(function(indw, word) {
             res = res + word.text + ' ';
@@ -34,15 +42,11 @@ imgSelector.addEventListener("change", function () {
             });
             showText.innerHTML = res;
             instruction.innerHTML = "Your text is already done";
-            $("html, body").animate({ scrollTop: $(document).height() }, "slow");
+            scrollConvert();
         })
         .fail(function() {
             instruction.innerHTML = "Please, try again or choose correct format of file";
         });
 });
 
-
-$("#scroll").click(function() {
-  $("html, body").animate({ scrollTop: $(document).height() }, "slow");
-  return false;
-});
+$("#scroll").click(scrollConvert);

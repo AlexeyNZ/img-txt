@@ -1,9 +1,15 @@
 var instruction = $("#instruction")[0];
 var imgSelector = $("#my-file-selector")[0];
 var showText = $("#showText")[0];
-imgSelector.addEventListener("change", function () {
+function scrollConvert() {
+    $("html, body").animate({ scrollTop: $(document).height() }, "slow");
+}
+function prepare() {
     $(".recognize").addClass("visible");
     instruction.innerHTML = "Just a sec while we analyse your text...";
+}
+imgSelector.addEventListener("change", function () {
+    prepare();
     var file = imgSelector.files[0];
     var params = {
         // Request parameters
@@ -31,13 +37,10 @@ imgSelector.addEventListener("change", function () {
         });
         showText.innerHTML = res;
         instruction.innerHTML = "Your text is already done";
-        $("html, body").animate({ scrollTop: $(document).height() }, "slow");
+        scrollConvert();
     })
         .fail(function () {
         instruction.innerHTML = "Please, try again or choose correct format of file";
     });
 });
-$("#scroll").click(function () {
-    $("html, body").animate({ scrollTop: $(document).height() }, "slow");
-    return false;
-});
+$("#scroll").click(scrollConvert);
