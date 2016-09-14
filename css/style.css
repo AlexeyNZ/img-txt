@@ -4,6 +4,10 @@
 
 */
 
+html {
+    overflow-x: hidden;
+}
+
 .main {
     color: white;
     background-color: black;
